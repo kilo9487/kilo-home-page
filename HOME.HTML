@@ -919,6 +919,7 @@
                                         "back_text": $("#back_text").val(),
                                         "back_url": $("#back_url").val(),
                                         "not_back_url": $("#not_back_url").val(),
+                                        "not_back_color": $("#not_back_color").val(),
                                     },
                                     "afk": {
                                         "afk_back_image": $("#afk_back_image").val(),
@@ -1016,9 +1017,9 @@
                             ]
                             for (const owo of val_list) {
                                 $("#" + owo.obj).attr("value", owo.val)
-                            }
-                            settings1()
-                            settings2()
+                            };
+                            settings1();
+                            settings2();
 
                         }
                     </script>
