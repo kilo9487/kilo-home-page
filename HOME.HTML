@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
-    <script src="js/jQuery.js"></script>
+    <script src="js/ .js"></script>
 
     <style>
+        :root {
+            --theme-color-main: #0ff;
+            --theme-color-back: rgba(0, 0, 0, 0.5);
+            --text-color:#fff;
+        }
         body {
             background-color: #000000;
             overflow: hidden;
@@ -17,19 +22,10 @@
             font-weight: 500;
             font-family: sans-serif;
             transition: .5s cubic-bezier(0, .5, 0, 1);
-            color: #fff;
+            color: var(--text-color);
             outline: none;
         }
 
-        :root {
-            --theme-color-main: #0ff;
-            --theme-color-back: rgba(0, 0, 0, 0.5);
-        }
-    </style>
-    <style id="all_style">
-        * {
-            color: "#fff"
-        }
     </style>
 
     <style>
@@ -768,7 +764,7 @@
                                 {
                                     const text_color_val = $("#text_color").val();
                                     $("#text_color_value").html(text_color_val)
-                                    $("#all_style").html(`*{ color: ${text_color_val} ;}`)
+                                    $(":root").css("--text-color",text_color_val)
                                 };
 
                             };
