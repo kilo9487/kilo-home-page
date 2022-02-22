@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
+
     <script src="js/jQuery.js"></script>
 
     <style>
@@ -241,6 +242,7 @@
 </head>
 
 <body>
+
     <style>
         .web_body {
             top: 50%;
@@ -253,6 +255,7 @@
             transition: 2s cubic-bezier(.5, 0, 0, 1);
         }
     </style>
+
     <div class="web_body" id="AFK_web_body">
         <div id="AFK-title">
             <div id="AFK-title-tip">PREES ESC OR CLACK ME EXIT AFK MODE</div>
@@ -393,7 +396,6 @@
         </style>
     </div>
 
-
     <div class="web_body" id="main_web_body">
 
         <style>
@@ -462,12 +464,13 @@
                     position: absolute;
                     transform: translate(-50%, -50%);
                     pointer-events: none;
-                    /* background: rgb(77, 77, 77); */
+                    background: rgb(0 0 0);
                     background: radial-gradient(circle, rgb(255 0 0 / 0%) 0%, rgb(0 0 0) 94%);
                     opacity: 0%;
                 }
             </style>
         </div>
+
         <div id="web-Effect-blur">
             <style>
                 #web-Effect-blur {
@@ -484,6 +487,7 @@
                 }
             </style>
         </div>
+
 
         <div id="backg">
             <div>
@@ -562,6 +566,7 @@
                 <div class="bg_obj" id="effect"></div>
             </div>
         </div>
+
         <div id="guild">
 
             <!-- title_bar -->
@@ -690,7 +695,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 <div class="blur_effect" id="content-setting">
                     <div>
@@ -1049,6 +1053,7 @@
             </div>
         </div>
 
+
         <style>
             #content {
                 gap: 10px;
@@ -1102,6 +1107,7 @@
                 border-radius: 10px;
             }
         </style>
+
         <style>
             #content>div>div>*,
             #content>div>div>*>* {
@@ -1113,6 +1119,7 @@
                 border-bottom: 2px solid var(--theme-color-main);
             }
         </style>
+
         <style>
             #title_bar {
                 grid-area: title-bar;
@@ -1127,6 +1134,7 @@
                 grid-area: subtitle-bar;
             }
         </style>
+
         <script>
             $(document).ready(() => {
                 $('.bg_item').css("height", "30%");
@@ -1138,6 +1146,7 @@
             })
         </script>
     </div>
+    
     <script>
         function AFK_mode() {
             $("title").html("AFK")
