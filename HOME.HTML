@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
 
     <meta charset="UTF-8">
@@ -13,8 +13,9 @@
         :root {
             --theme-color-main: #0ff;
             --theme-color-back: rgba(0, 0, 0, 0.5);
-            --text-color:#fff;
+            --text-color: #fff;
         }
+
         body {
             background-color: #000000;
             overflow: hidden;
@@ -27,7 +28,6 @@
             color: var(--text-color);
             outline: none;
         }
-
     </style>
 
     <style>
@@ -55,21 +55,34 @@
     </style>
 
     <style>
+        fieldset {
+            border: 3px solid var(--theme-color-main);
+            border-radius: 10px;
+        }
+
+        fieldset>legend {
+            color: var(--theme-color-main);
+            font-weight: 600;
+            font-size: 150%;
+        }
+
         textarea {
             border-radius: 10px;
             border: 2px solid var(--theme-color-main);
             background-color: #00000080;
             font-weight: 400;
             text-align: left;
-            max-width: 420px;
+            max-width: 350px;
             max-height: 120px;
             min-width: 100px;
             min-height: 100px;
         }
 
+
         input {
             margin: 5px;
         }
+
 
         input[type="range"] {
             appearance: none;
@@ -258,9 +271,11 @@
     </style>
 
     <div class="web_body" id="AFK_web_body">
+
         <div id="AFK-title">
             <div id="AFK-title-tip">PREES ESC OR CLACK ME EXIT AFK MODE</div>
         </div>
+
         <div id="AFK-menu"></div>
         <script>
             {
@@ -269,6 +284,7 @@
                 for (const link_ of links) {
                     AFK_menu_a += `<a target="_blank" href="http://${link_.link}">${link_.name}</a>`
                 }
+
                 $('#AFK-menu').html(AFK_menu_a)
 
             }
@@ -277,6 +293,7 @@
         <div id="AFK-footer">
             <div>AFK MODE</div>
         </div>
+
         <style>
             #AFK_web_body>*,
             #AFK_web_body>*>*,
@@ -335,7 +352,6 @@
         <style>
             #AFK-title {
                 grid-area: AFK-title;
-
             }
 
             #AFK-menu {
@@ -524,9 +540,7 @@
                         width: 1000%;
                         text-align: center;
                         font-weight: 500;
-
                     }
-
 
                     .bg_item {
                         z-index: 9;
@@ -558,12 +572,15 @@
                         opacity: 80%;
                     }
                 </style>
+
                 <div class="bg_obj bg_txt" id="bg_text">KILO</div>
                 <div class="bg_obj bg_txt" id="bg_text2">KILO</div>
+
                 <div>
                     <div class="bg_item bg_obj" id="owo1"></div>
                     <div class="bg_item bg_obj" id="owo2"></div>
                 </div>
+
                 <div class="bg_obj" id="effect"></div>
             </div>
         </div>
@@ -576,14 +593,15 @@
                     {
                         let title_bar_a = ''
 
-
                         for (const link_ of links) {
                             title_bar_a += `<a target="_blank" href="http://${link_.link}">${link_.name}</a>`
                         }
+
                         $('#title_bar').html(title_bar_a)
 
                     }
                 </script>
+
                 <style>
                     #title_bar {
                         background-color: var(--theme-color-back);
@@ -632,6 +650,7 @@
                         ]
                     </b>
                 </div>
+
                 <script>
                     function settings1() {
                         {
@@ -652,13 +671,13 @@
                                     border: "2px solid var(--theme-color-main)",
                                     boxShadow: "0 0 10px #000",
                                 });
-                                $("#settingStyle").html("")
                             };
 
                         };
 
                     }
                 </script>
+
                 <style>
                     #subtitle_bar {
                         background-color: var(--theme-color-back);
@@ -678,6 +697,7 @@
                         font-size: 100%;
                     }
                 </style>
+
             </div>
 
             <!-- content -->
@@ -685,22 +705,23 @@
 
                 <div class="blur_effect" id="content-box">
                     <div>
-                        <div>
-                            <h1>關於 輸入的style</h1>
+                        <fieldset>
+                            <legend>[關於 輸入的style]</legend>
                             <h3>輸入框 <input type="text" /></h3>
                             <h3>鏈接 <input type="url" /></h3>
                             <h3>按鈕 <input type="button" value="ouo" /></h3>
                             <h3>滑桿 <input type="range" /></h3>
                             <h3>文件 <input type="file" /></h3>
                             <h3>顔色 <input type="color" /></h3>
-                        </div>
+                        </fieldset>
                     </div>
                 </div>
 
                 <div class="blur_effect" id="content-setting">
                     <div>
-                        <div>
-                            <h1>[關於主題的設定owo]</h1>
+                        <fieldset>
+                            <legend>[關於主題的設定owo]</legend>
+
                             <div>主題色<input type="color" id="theme_color" value="#00ffff" oninput="settings2()" /><span
                                     id="theme_color_value">#00ffff</span></div>
                             <div>次要顔色<input type="color" id="theme_back_color" value="#000000"
@@ -709,35 +730,49 @@
                                     oninput="settings2()"><span id="theme_back_color_op_value">127</span></div>
                             <div>文字顔色<input type="color" id="text_color" value="#ffffff" oninput="settings2()" /><span
                                     id="text_color_value">#ffffff</span></div>
-                        </div>
-                        <div>
-                            <h1>[關於背景的設定owo]</h1>
-                            <div>啟用酷酷的背景<input class="onOff" type="range" id="back_eb" min="0" max="1" value="1"
-                                    oninput="settings2()" /><span id="back_eb_value">關閉</span></div>
-                            <div>背景不透明度<input type="range" id="bg_op_set" value="100" min="0" max="100"
-                                    oninput="settings2()"><span id="bg_op_set_value">100%</span></div>
-                            <div>上下邊框大小<input type="range" id="back_border_siz" min="0" max="40" value="30"
-                                    oninput="settings2()" /><span id="back_border_siz_value">30%</span></div>
-                            <div>暗邊效果<input type="range" id="black_opa" min="0" max="100" value="80"
-                                    oninput="settings2()" /><span id="black_opa_value">80%</span></div>
-                            <div>文字<input type="text" id="back_text" value="KILO" oninput="settings2()" /><span
-                                    id="back_text_value">KILO</span></div>
-                            <div>背景圖片<input type="url" id="back_url" oninput="settings2()" /></div>
-                            <div>背景顔色<input type="color" id="back_color" value="#ffffff" oninput="settings2()" /><span
-                                    id="back_color_value">#ffffff</span></div>
-                            <h3>[需要關掉酷酷的背景]</h3>
-                            <div>背景圖片<input type="url" id="not_back_url" oninput="settings2()" /></div>
-                            <div>背景顔色<input type="color" id="not_back_color" value="#000000"
-                                    oninput="settings2()" /><span id="not_back_color_value">#000000</span></div>
-                        </div>
-                        <div>
-                            <h1>[AFK模式設定]</h1>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>[關於背景的設定owo]</legend>
+
+                            <fieldset>
+                                <legend>[酷酷的背景]</legend>
+
+                                <div>啟用酷酷的背景<input class="onOff" type="range" id="back_eb" min="0" max="1" value="1"
+                                        oninput="settings2()" /><span id="back_eb_value">關閉</span></div>
+                                <div>背景不透明度<input type="range" id="bg_op_set" value="100" min="0" max="100"
+                                        oninput="settings2()"><span id="bg_op_set_value">100%</span></div>
+                                <div>上下邊框大小<input type="range" id="back_border_siz" min="0" max="40" value="30"
+                                        oninput="settings2()" /><span id="back_border_siz_value">30%</span></div>
+                                <div>暗邊效果<input type="range" id="black_opa" min="0" max="100" value="80"
+                                        oninput="settings2()" /><span id="black_opa_value">80%</span></div>
+                                <div>文字<input type="text" id="back_text" value="KILO" oninput="settings2()" /><span
+                                        id="back_text_value">KILO</span></div>
+                                <div>背景圖片<input type="url" id="back_url" oninput="settings2()" /></div>
+                                <div>背景顔色<input type="color" id="back_color" value="#ffffff"
+                                        oninput="settings2()" /><span id="back_color_value">#ffffff</span></div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>[需要關掉酷酷的背景]</legend>
+
+                                <div>背景圖片<input type="url" id="not_back_url" oninput="settings2()" /></div>
+                                <div>背景顔色<input type="color" id="not_back_color" value="#000000"
+                                        oninput="settings2()" /><span id="not_back_color_value">#000000</span></div>
+                            </fieldset>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>[AFK模式設定]</legend>
+
                             <div>背景圖片<input type="url" id="afk_back_image" oninput="settings2()" /></div>
                             <div>背景顔色<input type="color" id="afk_back_color" value="#000000"
                                     oninput="settings2()" /><span id="afk_back_color_value">#000000</span></div>
-                        </div>
-                        <div>
-                            <h1>[危險的設定]</h1>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>[危險的設定]</legend>
+
                             <h3>[!注意 這些設定只爲了外觀而生的 會很吃效能 所以 請小心使用!]</h3>
                             <div>毛玻璃效果<input class="onOff" type="range" id="blur_fx" min="0" max="1" value="0"
                                     oninput="settings2()" /><span id="blur_fx_value">關閉</span></div>
@@ -745,12 +780,15 @@
                                     oninput="settings2()" /><span id="web_fx_value">關閉</span></div>
                             <div>網頁暗邊效果<input class="onOff" type="range" id="web_black_fx" min="0" max="1" value="0"
                                     oninput="settings2()" /><span id="web_black_fx_value">關閉</span></div>
-                        </div>
-                        <div>
-                            <h1>[其他]</h1>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>[其他]</legend>
+
                             <div>進入AFK模式<input type="button" value="AFK" onclick="AFK_mode()" /></div>
-                        </div>
+                        </fieldset>
                     </div>
+
                     <script>
                         function settings2() {
                             {
@@ -771,7 +809,7 @@
                                 {
                                     const text_color_val = $("#text_color").val();
                                     $("#text_color_value").html(text_color_val)
-                                    $(":root").css("--text-color",text_color_val)
+                                    $(":root").css("--text-color", text_color_val)
                                 };
 
                             };
@@ -881,26 +919,30 @@
 
 
                     </script>
+
                 </div>
 
                 <div class="blur_effect" id="content-exp-setting">
                     <div>
+                        <fieldset>
+                            <legend>[導出設定檔]</legend>
 
-                        <div>
-                            <h1>[導出設定檔]</h1>
                             <input type="button" value="導出" onclick="exp_seting()" />
                             <div>
                                 <textarea id="exp_seting_value" cols="30" rows="10"></textarea>
                             </div>
-                        </div>
-                        <div>
-                            <h1>[導入設定檔]</h1>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>[導入設定檔]</legend>
+
                             <input type="button" value="導入" onclick="inp_seting()" />
                             <div>
                                 <textarea id="inp_seting_value" cols="30" rows="10" onchange="inp_seting()"></textarea>
                             </div>
-                        </div>
+                        </fieldset>
                     </div>
+
                     <script>
                         function exp_seting() {
                             const set = {
@@ -1026,28 +1068,33 @@
 
                         }
                     </script>
+
                 </div>
 
                 <div class="blur_effect" id="content-tip">
                     <div>
-                        <div>
-                            <h1>[使用教學]</h1>
-                            <h3>[主畫面]</h3>
-                            <li>
-                                <span>Ctrl + Alt + L | 進入AFK模式</span>
-                            </li>
-                            <h3>[AFK模式]</h3>
-                            <li>
-                                <span>Esc | 退出AFK模式</span>
-                            </li>
-                        </div>
-                        <div>
-                            <h1>[關於]</h1>
+                        <fieldset>
+                            <legend>[使用教學]</legend>
+
+                            <fieldset>
+                                <legend>[主畫面]</legend>
+                                <h3>Ctrl + Alt + L | 進入AFK模式</h3>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>[AFK模式]</legend>
+                                <h3>Esc | 退出AFK模式</h3>
+                            </fieldset>
+
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>[關於]</legend>
                             <h3>檔案創建時間：2022年 2月 6日 上午7：41</h3>
                             <h3>作者：KILO</h3>
                             <h3>類型：展示用網頁</h3>
                             <h3>備注：高效能警告</h3>
-                        </div>
+                        </fieldset>
                     </div>
                 </div>
 
@@ -1115,10 +1162,6 @@
                 font-weight: 600;
                 margin: 10px;
             }
-
-            #content>div>div>div {
-                border-bottom: 2px solid var(--theme-color-main);
-            }
         </style>
 
         <style>
@@ -1146,8 +1189,9 @@
                 }, 1e3)
             })
         </script>
+
     </div>
-    
+
     <script>
         function AFK_mode() {
             $("title").html("AFK")
@@ -1164,6 +1208,7 @@
             });
             $("#AFK_web_body").css("opacity", "1");
         }
+
         function AFK_off() {
             $("#AFK_web_body").css({
                 opacity: "0",
